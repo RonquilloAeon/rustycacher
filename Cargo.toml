@@ -1,0 +1,25 @@
+[package]
+name = "rustycacher"
+version = "0.1.0"
+edition = "2021"
+default-run = "cacher"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "cacher"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "cacher"
+path = "src/main.rs"
+
+[[bin]]
+name = "api"
+path = "src/bin/api.rs"
+
+[dependencies]
+redis = "0.21.5"
+rocket = "0.5.0-rc.1"
+rocket_contrib = "0.4.10"
+sha2 = "0.10.2"
