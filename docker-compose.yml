@@ -1,5 +1,17 @@
 version: "3.8"
 services:
+  api:
+    build:
+      context: .
+      target: "runner"
+    container_name: cacher_api
+    environment:
+      - DB_URL=redis://db:6379
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
   db:
     container_name: cacher_db
     environment:
